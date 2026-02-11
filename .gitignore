@@ -1,0 +1,36 @@
+# --- Datasets ---
+Dataset/
+
+# --- Python / uv ---
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.python-version
+uv.lock
+
+# --- Distribution / Build ---
+build/
+dist/
+local_settings.py
+*.egg-info/
+.installed.cfg
+*.egg
+
+# --- Models & Heavy Files ---
+models/*.pth
+*.onnx
+*.pkl
+
+# --- Jupyter & Notebooks ---
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+# Fixes potential issues with large notebook metadata
+.ipynb_checkpoints
+
+# --- VS Code & System ---
+.vscode/
+.DS_Store
+.env
+.direnv/
+Thumbs.db
