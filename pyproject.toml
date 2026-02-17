@@ -1,15 +1,26 @@
 [project]
 name = "cvsf-2"
 version = "0.1.0"
-description = "Add your description here"
+description = "Computer Vision with CUDA Support"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "ipykernel>=7.2.0",
-    "matplotlib>=3.10.8",
-    "numpy>=2.4.2",
-    "pillow>=12.1.1",
-    "scikit-learn>=1.8.0",
-    "torch>=2.10.0",
-    "torchvision>=0.25.0",
+    "ipykernel>=6.29.0",
+    "matplotlib>=3.9.0",
+    "numpy>=2.0.0",
+    "pillow>=10.4.0",
+    "scikit-learn>=1.5.0",
+    "torch>=2.4.0",
+    "torchvision>=0.19.0",
 ]
+
+# This section tells uv where to find the GPU versions
+[[tool.uv.index]]
+name = "pytorch_cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
+# This pins torch and torchvision to the CUDA index above
+[tool.uv.sources]
+torch = { index = "pytorch_cu124" }
+torchvision = { index = "pytorch_cu124" }
